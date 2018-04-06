@@ -56,7 +56,7 @@ class Header extends Component {
 
         // If the city name isn't found in the historics state then do the call.
         if(!checkThatACityIsNotInHistorics(citySearched, cityHistoric)) {
-            getRequest(`${config.apiUrl}${citySearched}&APPID=${config.apiKey}`, config.requestConfi).then( (data)=>{
+            getRequest(`${config.apiUrl}${citySearched}&APPID=${config.apiKey}&units=metric`, config.requestConfi).then( (data)=>{
                 const uniqueId = generateUniqueId();
                 this.triggerSearchAction(citySearched, uniqueId);
                 this.triggerStoreDataCity(data, uniqueId);
