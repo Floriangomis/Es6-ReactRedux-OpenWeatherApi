@@ -20,13 +20,11 @@ const mapStateToProps = state => {
 };
 
 class HistoricContainer extends React.Component {
-    
     clickHandler = (cityId) => {
         const cityToDisplay = findObjectFromIdInArray(cityId, this.props.datacity)[0];
         // Trigger action which update the state of current city in the store and then display a new set of data in dashboard.
         this.props.updateCurrentCity( cityToDisplay );
     };
-
     render() {
         const { cityHistoric } = this.props;
         return (

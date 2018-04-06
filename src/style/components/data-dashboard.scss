@@ -3,6 +3,14 @@
     padding: 20px;
     width: 80vw;
 
+    .city-name {
+        text-align: center;
+
+        span {
+            color: $tagsColor;
+        }
+    }
+
     .no-data {
         text-align: center;
     }

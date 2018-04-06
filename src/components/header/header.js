@@ -59,8 +59,18 @@ class Header extends Component {
         // Trigger action which update the state of current city in the store and then display a new set of data in dashboard.
         this.props.updateCurrentCity( cityToDisplay );
     };
-
+    // Click handler on search button
     handleSearchClick = () => {
+        this.search();
+    };
+    // Handle the enter press button when focus is on the input
+    handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.search();
+        }
+    };
+    // Process a search via the API or via the redux store
+    search() {
         // This replace function avoid to let user enter 'Paris' and ' Paris'. And to lowerCase to avoid 'Rouen' and 'rouen'.
         const citySearched = this.inputCity.current.value.replace(/\s+/g, '').toLowerCase();
         const { cityHistoric } = this.props;
@@ -80,6 +90,7 @@ class Header extends Component {
         } else {
             this.retrieveDataFromStore(citySearched);
         }
+        this.inputCity.current.value = '';
     };
 
     render() {
@@ -107,8 +118,8 @@ class Header extends Component {
                         }
                     </div>
                     <div>
-                        <input ref={this.inputCity} type="text" />
-                        <button onClick={ () => { this.handleSearchClick() } } > Search ! </button>
+                        <input ref={this.inputCity} type="text" onKeyPress={ this.handleKeyPress  } />
+                        <button onClick={  this.handleSearchClick } > Search ! </button>
                     </div>
                 </div>
             </header>

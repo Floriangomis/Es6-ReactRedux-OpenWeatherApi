@@ -126,6 +126,10 @@
   float: left;
   padding: 20px;
   width: 80vw; }
+  .dashboard-container .city-name {
+    text-align: center; }
+    .dashboard-container .city-name span {
+      color: #ee5253; }
   .dashboard-container .no-data {
     text-align: center; }
 

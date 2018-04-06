@@ -14,10 +14,19 @@ const DataDashboardPresentational = (props) => {
                 (checkDataIsAvailable()) ?
                     (
                         <React.Fragment>
+                            <h3 className='city-name'>
+                                Weather in 
+                                <span> { props.currentCity.data.city.name } </span>
+                                For the next 5 days.
+                            </h3>
                             {
                                 props.currentCity.data.list.map( (value) => {
                                     return (
-                                        <WidgetWeather key={value.dt} date={value.dt_txt} temp={value.main.temp} weather={value.weather[0]['description']}/>
+                                        <WidgetWeather 
+                                            key={value.dt} 
+                                            date={value.dt_txt} 
+                                            temp={value.main.temp} 
+                                            weather={value.weather[0]['description']} />
                                     )
                                 })
                             }
