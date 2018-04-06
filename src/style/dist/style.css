@@ -1,0 +1,141 @@
+@charset "UTF-8";
+.page-not-found {
+  text-align: center;
+  position: relative;
+  top: 40vh; }
+
+.header-container {
+  background-color: #1e272e;
+  color: white;
+  font: 1em/1.5 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: 75px 0 40px 0;
+  -webkit-font-smoothing: antialiased;
+  text-align: center; }
+  .header-container .header-wrapper {
+    max-width: 540px;
+    margin: 0 auto; }
+    .header-container .header-wrapper .title {
+      text-align: center;
+      border-top: 1px solid white;
+      margin-bottom: 40px;
+      padding: 0 40px;
+      display: inline-block; }
+    .header-container .header-wrapper .subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-style: italic; }
+    .header-container .header-wrapper .icon {
+      cursor: pointer;
+      font-size: 1.2em; }
+    .header-container .header-wrapper input[type="text"] {
+      border: none;
+      background-image: none;
+      background-color: transparent;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      outline: none;
+      color: white;
+      caret-color: white;
+      border-bottom: 1px solid white;
+      margin-right: 14px; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?69874047");
+  src: url("../font/fontello.eot?69874047#iefix") format("embedded-opentype"), url("../font/fontello.woff2?69874047") format("woff2"), url("../font/fontello.woff?69874047") format("woff"), url("../font/fontello.ttf?69874047") format("truetype"), url("../font/fontello.svg?69874047#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('./font/fontello.svg?69874047#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-instagram:before {
+  content: '\f16d'; }
+
+/* '' */
+.icon-spotify:before {
+  content: '\f1bc'; }
+
+/* '' */
+.icon-twitter-squared:before {
+  content: '\f304'; }
+
+/* '' */
+.historic-container {
+  float: left;
+  padding: 20px;
+  width: 10vw; }
+  .historic-container ul li {
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid black;
+    padding: 4px;
+    margin-bottom: 10px;
+    transition-duration: 1s; }
+    .historic-container ul li:hover {
+      background-color: #8395a7; }
+
+.dashboard-container {
+  float: left;
+  padding: 20px;
+  width: 80vw; }
+
+body {
+  color: #222f3e;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0; }
+
+clear-fix {
+  clear: both; }
+
+a:hover {
+  color: inherit;
+  text-decoration: inherit; }
+
+a:visited {
+  color: inherit;
+  text-decoration: inherit; }
+
+a:link {
+  color: inherit;
+  text-decoration: inherit; }
+
+a:active {
+  color: inherit;
+  text-decoration: inherit; }

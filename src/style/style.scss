@@ -1,0 +1,40 @@
+@import 'vars';
+@import 'components/home';
+@import 'components/page-not-found';
+@import 'components/header';
+@import 'vendor/fontello';
+@import 'components/historic-panel';
+@import 'components/data-dashboard.scss';
+
+body {
+    color: $mainColorFontColor;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+clear-fix {
+    clear: both;
+}
+
+a {
+    &:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    
+    &:visited {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    
+    &:link {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    
+    &:active {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}

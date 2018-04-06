@@ -1,0 +1,24 @@
+.historic-container {
+    float: left;
+
+    padding: 20px;
+
+    width: 10vw;
+
+    ul {
+        li{
+            cursor: pointer;
+            list-style: none;
+
+            border: 1px solid black;
+            padding: 4px;
+            margin-bottom: 10px;
+
+            transition-duration: 1s;
+
+            &:hover {
+                background-color: $mainGray;
+            }
+        }
+    }
+}
