@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { searchCity, storeDataForCity, updateCurrentCityDisplayed } from '../../actions/action-creator';
 import { getRequest } from '../../utility/request';
 import { config } from '../../utility/config';
-import { generateUniqueId, checkThatACityIsNotInHistorics } from '../../utility/utility';
+import { generateUniqueId, checkThatACityIsNotInHistorics, findObjectFromNameInarray, findObjectFromIdInArray } from '../../utility/utility';
 
 const mapStateToProps = state => {
     return { 
-        cityHistoric: state.cityHistoric
+        cityHistoric: state.cityHistoric,
+        datacity: state.datacity
     };
 };
 const mapDispatchToProps = dispatch => {
@@ -51,7 +52,8 @@ class Header extends Component {
     };
 
     handleSearchClick = () => {
-        const citySearched = this.inputCity.current.value;
+        // This replace function avoid to let user enter 'Paris' and ' Paris'. And to lowerCase to avoid 'Rouen' and 'rouen'.
+        const citySearched = this.inputCity.current.value.replace(/\s+/g, '').toLowerCase();
         const { cityHistoric } = this.props;
 
         // If the city name isn't found in the historics state then do the call.
@@ -67,7 +69,12 @@ class Header extends Component {
                 return; // Just return nothing for now.
             });
         } else {
+            const { cityHistoric, datacity } = this.props;
             // Select from history this way we saved a called.
+            const filteredArray = findObjectFromNameInarray(citySearched, cityHistoric)[0];
+            const cityToDisplay = findObjectFromIdInArray(filteredArray.cityId, datacity)[0];
+            // Trigger action which update the state of current city in the store and then display a new set of data in dashboard.
+            this.props.updateCurrentCity( cityToDisplay );
         }
     };
 

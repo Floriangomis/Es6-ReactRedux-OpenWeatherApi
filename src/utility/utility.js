@@ -22,3 +22,10 @@ export let checkThatACityIsNotInHistorics = (cityName, cityHistorics) => {
 export let findObjectFromIdInArray = (id, array) => {
     return array.filter( item => item.id === id);
 };
+
+export let findObjectFromNameInarray = (name, array) => {
+    return array.filter( item => { 
+        console.log(item.cityName);
+        return item.cityName === name 
+    } );
+};
