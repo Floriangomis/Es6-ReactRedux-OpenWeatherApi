@@ -7,7 +7,7 @@ const DataDashboardPresentational = (props) => {
     const checkDataIsAvailable = () => {
         return (props.currentCity && props.currentCity.data);
     };
-
+    
     return (
         <div className='dashboard-container'>
             { 
@@ -17,6 +17,7 @@ const DataDashboardPresentational = (props) => {
                             <h3 className='city-name'>
                                 Weather in 
                                 <span> { props.currentCity.data.city.name } </span>
+                                ({ props.currentCity.data.city.country})
                                 For the next 5 days.
                             </h3>
                             {
