@@ -8,3 +8,10 @@
     border-radius: 20px;
     margin: 20px;
 }
+
+@media (max-width: 960px) {
+    .widget-container {
+        float: none;
+        margin: 20px auto;
+    }
+}

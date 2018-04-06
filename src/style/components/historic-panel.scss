@@ -6,7 +6,11 @@
     width: 10vw;
 
     ul {
+        margin: 0;
+        padding: 0;
+
         li{
+            text-align: center;
             cursor: pointer;
             list-style: none;
 
@@ -26,5 +30,10 @@
 @media (max-width: 960px){
     .historic-container {
         width: 90%;
+        padding: 10px 5%;
+        ul {
+            margin: 0;
+            padding: 0;
+        }
     }
 }

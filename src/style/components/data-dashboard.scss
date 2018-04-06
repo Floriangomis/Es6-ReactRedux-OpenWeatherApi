@@ -1,13 +1,16 @@
 .dashboard-container {
     float: left;
-    
     padding: 20px;
     width: 80vw;
-    
+
+    .no-data {
+        text-align: center;
+    }
 }
 
-@media (max-width: 960px){
+@media (max-width: 960px) {
     .dashboard-container {
-        width: 100%;    
+        width: 100%;
+        padding: 0;
     }
 }

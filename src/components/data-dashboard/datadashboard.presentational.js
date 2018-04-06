@@ -13,7 +13,7 @@ const DataDashboardPresentational = (props) => {
             { 
                 (checkDataIsAvailable()) ?
                     (
-                        <div>
+                        <React.Fragment>
                             {
                                 props.currentCity.data.list.map( (value) => {
                                     return (
@@ -21,11 +21,13 @@ const DataDashboardPresentational = (props) => {
                                     )
                                 })
                             }
-                        </div>
+                        </React.Fragment>
                     )
                 : 
                     (
-                        <h1> No Data to display </h1>
+                        <div className='no-data'>
+                            <h1> No Data to display </h1>
+                        </div>
                     )
             }
         </div>

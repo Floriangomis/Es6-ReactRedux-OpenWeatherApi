@@ -4,7 +4,6 @@ const HistoricPresentational = (props) => {
     const { historics, clickHandler} = props;
     return (
         <div className='historic-container'>
-            Historic :
             <ul>
                 { 
                     historics.map( (historic) => {
