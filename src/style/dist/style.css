@@ -39,6 +39,10 @@
       caret-color: white;
       border-bottom: 1px solid white;
       margin-right: 14px; }
+    .header-container .header-wrapper .err-msg {
+      font-size: 12px;
+      color: #ee5253;
+      padding-top: 10px; }
 
 @font-face {
   font-family: 'fontello';

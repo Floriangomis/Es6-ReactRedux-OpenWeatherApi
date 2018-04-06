@@ -45,5 +45,11 @@
             border-bottom: 1px solid white;
             margin-right: 14px;
         }
+
+        .err-msg {
+            font-size: 12px;
+            color: $tagsColor;
+            padding-top: 10px;
+        }
     }
 }

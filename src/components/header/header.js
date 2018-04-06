@@ -22,6 +22,10 @@ const mapDispatchToProps = dispatch => {
 
 class Header extends Component {
 
+    state = {
+        errMessage: ''
+    }
+
     inputCity = React.createRef();
     
     // Dispatch Action concerning the Search
@@ -71,6 +75,11 @@ class Header extends Component {
     };
     // Process a search via the API or via the redux store
     search() {
+        // Reset the error message
+        this.setState({
+            ...this.state,
+            errMessage: ''
+        });
         // This replace function avoid to let user enter 'Paris' and ' Paris'. And to lowerCase to avoid 'Rouen' and 'rouen'.
         const citySearched = this.inputCity.current.value.replace(/\s+/g, '').toLowerCase();
         const { cityHistoric } = this.props;
@@ -83,6 +92,18 @@ class Header extends Component {
                 this.triggerStoreDataCity(data, uniqueId);
                 this.triggerUpdateCurrentCity(data);
             }, (err) => {
+                const e = JSON.stringify(err);
+                if(e.includes('400')) {
+                    this.setState({
+                        ...this.state,
+                        errMessage: 'Enter a city name'
+                    });
+                } else if ( e.includes('404')) {
+                    this.setState({
+                        ...this.state,
+                        errMessage: 'City Not found please retry with another name'
+                    });
+                }
                 // use something to log the error
                 // We could also display an error message on the UI
                 return; // Just return nothing for now.
@@ -121,6 +142,14 @@ class Header extends Component {
                         <input ref={this.inputCity} type="text" onKeyPress={ this.handleKeyPress  } />
                         <button onClick={  this.handleSearchClick } > Search ! </button>
                     </div>
+                    {
+                        (this.state.errMessage) ?
+                            <div className='err-msg'>
+                                { this.state.errMessage }
+                            </div>
+                        :
+                            ''
+                    }
                 </div>
             </header>
         )
