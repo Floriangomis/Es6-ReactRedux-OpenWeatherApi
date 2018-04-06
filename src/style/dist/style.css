@@ -110,7 +110,7 @@
     .historic-container ul li:hover {
       background-color: #8395a7; }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .historic-container {
     width: 90%; } }
 
@@ -118,6 +118,10 @@
   float: left;
   padding: 20px;
   width: 80vw; }
+
+@media (max-width: 960px) {
+  .dashboard-container {
+    width: 100%; } }
 
 .widget-container {
   float: left;

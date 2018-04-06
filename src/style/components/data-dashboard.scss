@@ -5,3 +5,9 @@
     width: 80vw;
     
 }
+
+@media (max-width: 960px){
+    .dashboard-container {
+        width: 100%;    
+    }
+}
