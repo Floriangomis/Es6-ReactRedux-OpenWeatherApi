@@ -7,7 +7,7 @@ import * as rainyIcon from '../style/icons/icon.svg';
 import * as snowyIcon from '../style/icons/ice-crystal.svg';
 
 export let formatDate = ( timestamp ) => {
-    return moment(timestamp).format("MMM Do YY");  
+    return moment(timestamp).format("LLLL");  
 };
 
 export let generateUniqueId = () => {

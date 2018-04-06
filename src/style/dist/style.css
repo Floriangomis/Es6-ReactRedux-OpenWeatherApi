@@ -110,6 +110,10 @@
     .historic-container ul li:hover {
       background-color: #8395a7; }
 
+@media (max-width: 720px) {
+  .historic-container {
+    width: 90%; } }
+
 .dashboard-container {
   float: left;
   padding: 20px;
