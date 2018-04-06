@@ -12,6 +12,7 @@ const mapStateToProps = state => {
 class DataDashboardContainer extends React.Component {
     render() {
         const { currentCityDisplay } = this.props;
+
         return (
             <DataDashboardPresentational currentCity={currentCityDisplay} />
         )

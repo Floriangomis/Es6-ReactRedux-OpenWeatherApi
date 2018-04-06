@@ -50,6 +50,15 @@ class Header extends Component {
             }
         );
     };
+    // Function to retrieve data from store instead of making an http request done in the past
+    retrieveDataFromStore = (citySearched) => {
+        const { cityHistoric, datacity } = this.props;
+        // Select from history this way we saved an http call.
+        const filteredArray = findObjectFromNameInarray(citySearched, cityHistoric)[0];
+        const cityToDisplay = findObjectFromIdInArray(filteredArray.cityId, datacity)[0];
+        // Trigger action which update the state of current city in the store and then display a new set of data in dashboard.
+        this.props.updateCurrentCity( cityToDisplay );
+    };
 
     handleSearchClick = () => {
         // This replace function avoid to let user enter 'Paris' and ' Paris'. And to lowerCase to avoid 'Rouen' and 'rouen'.
@@ -69,12 +78,7 @@ class Header extends Component {
                 return; // Just return nothing for now.
             });
         } else {
-            const { cityHistoric, datacity } = this.props;
-            // Select from history this way we saved a called.
-            const filteredArray = findObjectFromNameInarray(citySearched, cityHistoric)[0];
-            const cityToDisplay = findObjectFromIdInArray(filteredArray.cityId, datacity)[0];
-            // Trigger action which update the state of current city in the store and then display a new set of data in dashboard.
-            this.props.updateCurrentCity( cityToDisplay );
+            this.retrieveDataFromStore(citySearched);
         }
     };
 

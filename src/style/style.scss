@@ -4,7 +4,8 @@
 @import 'components/header';
 @import 'vendor/fontello';
 @import 'components/historic-panel';
-@import 'components/data-dashboard.scss';
+@import 'components/data-dashboard';
+@import 'components/widget-weather';
 
 body {
     color: $mainColorFontColor;
@@ -13,7 +14,7 @@ body {
     padding: 0;
 }
 
-clear-fix {
+.clear-fix {
     clear: both;
 }
 

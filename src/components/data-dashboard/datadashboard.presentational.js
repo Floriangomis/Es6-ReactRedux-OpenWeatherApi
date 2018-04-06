@@ -1,5 +1,7 @@
 import React from 'react';
 
+import WidgetWeather from './widget-weather/widgetweather';
+
 const DataDashboardPresentational = (props) => {
     
     const checkDataIsAvailable = () => {
@@ -15,13 +17,7 @@ const DataDashboardPresentational = (props) => {
                             {
                                 props.currentCity.data.list.map( (value) => {
                                     return (
-                                        <p key={ value.dt }>  
-                                            Date : { value.dt_txt} 
-                                            <br />
-                                            Temp : { value.main.temp } Celcius
-                                            <br />
-                                            Weather : { value.weather[0]['description'] }
-                                        </p>
+                                        <WidgetWeather key={value.dt} date={value.dt_txt} temp={value.main.temp} weather={value.weather[0]['description']}/>
                                     )
                                 })
                             }
