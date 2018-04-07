@@ -4,7 +4,15 @@ const HistoricPresentational = (props) => {
     const { historics, clickHandler} = props;
     return (
         <div className='historic-container'>
-            <ul>
+            <span style={ { 
+                borderBottom: '1px solid black'
+                } 
+            }>
+                City searched previously :
+            </span>
+            <ul style={ {
+                    marginTop: '20px'
+            } }>
                 { 
                     historics.map( (historic) => {
                         return (
